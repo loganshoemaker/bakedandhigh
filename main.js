@@ -23,7 +23,7 @@ var main = () => {
             text.includes("sugar")
         ){
             const update = `You may want to remove up to ${parseInt(wholeAmount) * 2} tablespoon${wholeAmount === "1" ? "" : "s"} of this sugar!`;
-            ingredient.innerHTML = `${text} : <span class="habk-wrapper">${update}</span>`;
+            ingredient.innerHTML = `${text} <span class="habk-wrapper">${update}</span>`;
         }
 
         if(
@@ -31,7 +31,7 @@ var main = () => {
             text.includes("yeast")
         ){
             const update = `You may want to start with only 75% of the recommended amount of yeast!`;
-            ingredient.innerHTML = `${text} : <span class="habk-wrapper">${update}</span>`;
+            ingredient.innerHTML = `${text} <span class="habk-wrapper">${update}</span>`;
         }
 
         if(
@@ -41,8 +41,7 @@ var main = () => {
                 !text.includes("extra large")
             )
         ){
-            const text = ingredient.innerHTML.replace("egg", "extra large egg");
-
+            const text = ingredient.innerHTML.replace("egg", "<span class='habk-wrapper-inline'>extra large</span> egg");
 
             const update = `You may want to start with only 75% of the recommended amount of yeast!`;
             ingredient.innerHTML = text;
