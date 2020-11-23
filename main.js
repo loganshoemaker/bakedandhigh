@@ -6,7 +6,6 @@ var main = () => {
     var ingredients = Array.from(document.getElementsByClassName("ingredients-item-name"));
     ingredients.forEach(ingredient => {
         const text = ingredient.textContent.trim().toLowerCase();
-        console.log(text);
         const wholeAmount = text.replace(/\D/g, "");
 
         if(
