@@ -5,17 +5,53 @@ const threeFourths = "¾";
 var main = () => {
     var ingredients = Array.from(document.getElementsByClassName("ingredients-item-name"));
     ingredients.forEach(ingredient => {
-        const text = ingredient.textContent.trim();
+        const text = ingredient.textContent.trim().toLowerCase();
         console.log(text);
-        console.log("contains word cup: ", text.includes("cup"));
-        console.log("contains 1/2: ", text.includes("½"));
-        console.log(Array.from(text));
-        
-        Array.from(text).forEach(character => {
-            console.log(character, character === half);
-            console.log(character, character === quarter);
-            console.log(character, character === threeFourths);
-        });
+        const wholeAmount = text.replace(/\D/g, "");
+
+        if(
+            Number.isInteger(parseInt(wholeAmount)) &&
+            text.includes("cup") &&
+            text.includes("flour")
+        ){
+            const update = `You may want to add up to ${parseInt(wholeAmount) * 2} tablespoons of flour!`;
+            ingredient.innerHTML = `${text} : <span class="baked-and-high-wrapper">${update}</span>`;
+        }
+
+        if(
+            Number.isInteger(parseInt(wholeAmount)) &&
+            text.includes("cup") &&
+            text.includes("sugar")
+        ){
+            const update = `You may want to remove up to ${parseInt(wholeAmount)} tablespoon${wholeAmount === "1" ? "" : "s"} of this sugar!`;
+            ingredient.innerHTML = `${text} : <span class="baked-and-high-wrapper">${update}</span>`;
+        }
+
+        if(
+            Number.isInteger(parseInt(wholeAmount)) &&
+            text.includes("yeast")
+        ){
+            const update = `You may want to start with only 75% of the recommended amount of yeast!`;
+            ingredient.innerHTML = `${text} : <span class="baked-and-high-wrapper">${update}</span>`;
+        }
+
+        if(
+            text.includes("baking powder") ||
+            text.includes("baking soda") &&
+            (
+                text.includes("teaspoon") ||
+                text.includes("tablespoon") ||
+                text.indcludes("teaspoons") ||
+                text.includes("tablespoons") ||
+                text.includes("tsp") ||
+                text.includes("tbsp")
+            )
+        )
+        {
+            const update = `You may want to use half the amount of this chemical leavener!`;
+            console.log(update)
+            ingredient.innerHTML = `${text} : <span class="baked-and-high-wrapper">${update}</span>`;
+        }
     });
 }
 
