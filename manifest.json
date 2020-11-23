@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+   
+    "name": "Baked and High",
+    "version": "0.0.1",
+    "description": "Recipe adjuster for high alitude baking!",
+   
+    "content_scripts": [{
+      "css": ["style.css"],
+      "js": ["main.js"],
+      "matches": ["https://www.allrecipes.com/*"]
+    }]
+   
+  }
