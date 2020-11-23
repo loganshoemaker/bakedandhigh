@@ -14,7 +14,7 @@ var main = () => {
             text.includes("flour")
         ){
             const update = `You may want to add up to ${parseInt(wholeAmount) * 2} tablespoon${wholeAmount === "1" ? "" : "s"} of flour!`;
-            ingredient.innerHTML = `${text} : <span class="baked-and-high-wrapper">${update}</span>`;
+            ingredient.innerHTML = `${text} : <span class="habk-wrapper">${update}</span>`;
         }
 
         if(
@@ -23,7 +23,7 @@ var main = () => {
             text.includes("sugar")
         ){
             const update = `You may want to remove up to ${parseInt(wholeAmount) * 2} tablespoon${wholeAmount === "1" ? "" : "s"} of this sugar!`;
-            ingredient.innerHTML = `${text} : <span class="baked-and-high-wrapper">${update}</span>`;
+            ingredient.innerHTML = `${text} : <span class="habk-wrapper">${update}</span>`;
         }
 
         if(
@@ -31,7 +31,7 @@ var main = () => {
             text.includes("yeast")
         ){
             const update = `You may want to start with only 75% of the recommended amount of yeast!`;
-            ingredient.innerHTML = `${text} : <span class="baked-and-high-wrapper">${update}</span>`;
+            ingredient.innerHTML = `${text} : <span class="habk-wrapper">${update}</span>`;
         }
 
         if(
@@ -63,7 +63,7 @@ var main = () => {
         {
             const update = `You may want to use half the amount of this chemical leavener!`;
             console.log(update)
-            ingredient.innerHTML = `${text}<span class="baked-and-high-wrapper">${update}</span>`;
+            ingredient.innerHTML = `${text}<span class="habk-wrapper">${update}</span>`;
         }
     });
 }
