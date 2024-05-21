@@ -1,14 +1,26 @@
 {
-    "manifest_version": 2,
-   
-    "name": "High Altitude Baking Helper",
-    "version": "0.0.1",
-    "description": "Recipe adjuster for 5,280' elevation!",
-   
-    "content_scripts": [{
-      "css": ["style.css"],
-      "js": ["main.js"],
-      "matches": ["https://www.allrecipes.com/*"]
-    }]
-   
+  "manifest_version": 3,
+  "name": "ChatGPT Extension",
+  "version": "1.0",
+  "description": "A Chrome extension that sends a request to ChatGPT.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
   }
+}
