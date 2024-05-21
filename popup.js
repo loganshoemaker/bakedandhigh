@@ -1,6 +1,6 @@
 document.getElementById('send').addEventListener('click', async () => {
     const prompt = document.getElementById('prompt').value;
-    const apiKey = 'sk-proj-XkzjMfiXN8HuDVbqGAO4T3BlbkFJql1AAhkFc9HlQwUtAf8B';  // Replace with your OpenAI API key
+    const apiKey = 'replace key';  // Replace with your OpenAI API key
   
     const responseElement = document.getElementById('response');
     responseElement.textContent = 'Loading...';
